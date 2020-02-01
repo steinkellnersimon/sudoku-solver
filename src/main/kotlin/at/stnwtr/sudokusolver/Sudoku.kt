@@ -55,7 +55,8 @@ class Sudoku(private val board: Array<IntArray>) {
 
         for (i in 0..8) {
             if (i % 3 == 0 && i != 0) {
-                stringBuilder.append("---------+-----------+---------${System.lineSeparator()}")
+                stringBuilder.append("---------+-----------+---------")
+                stringBuilder.appendln()
             }
 
             for (j in 0..8) {
@@ -63,9 +64,9 @@ class Sudoku(private val board: Array<IntArray>) {
                     stringBuilder.append("|  ")
                 }
 
-                stringBuilder.append("${board[i][j]}  ")
+                stringBuilder.append("${board[i][j]}").append("  ")
             }
-            stringBuilder.append(System.lineSeparator())
+            stringBuilder.appendln()
         }
 
         return stringBuilder.trimEnd().toString()
